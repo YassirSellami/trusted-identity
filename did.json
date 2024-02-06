@@ -1,0 +1,23 @@
+{
+    "@context": [
+        "https://www.w3.org/ns/did/v1"
+    ],
+    "id": "did:web:raw.githubusercontent.com:YassirSellami:trusted-identity:main",
+    "verificationMethod": [
+        {
+            "@context": "https://w3c-ccg.github.io/lds-jws2020/contexts/v1/",
+            "id": "did:web:raw.githubusercontent.com:YassirSellami:trusted-identity:main#EC",
+            "type": "JsonWebKey2020",
+            "publicKeyJwk": {
+                "kty": "EC",
+                "crv": "P-384",
+                "x": "H00inPZzl2gWx7UsFcQUN8YALhNdhoJr5OXHDtfQo8V59FZzumir2L2tcH2oRB75iwY5rGblAhn9wEMIn5jikHL7B26XV7SLNqj1bYiLBiRLix8Q==",
+                "y": "JZsXa2Ecs7sdvl11buQ82omNqnrH8qio2buzNC6BkbK+yGQRvK+AHGvwh8fCHdiEVRoOyIiaTtQZkKrT+Ijxw==",
+                "x5u": "https://raw.githubusercontent.com/YassirSellami/trusted-identity/main/certificate.pem"
+            }
+        }
+    ],
+    "assertionMethod": [
+        "did:web:raw.githubusercontent.com:YassirSellami:trusted-identity:main#EC"
+    ]
+}

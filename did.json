@@ -1,23 +1,35 @@
 {
-    "@context": [
-        "https://www.w3.org/ns/did/v1"
-    ],
-    "id": "did:web:raw.githubusercontent.com:YassirSellami:trusted-identity:main",
-    "verificationMethod": [
-        {
-            "@context": "https://w3c-ccg.github.io/lds-jws2020/contexts/v1/",
-            "id": "did:web:raw.githubusercontent.com:YassirSellami:trusted-identity:main#EC",
-            "type": "JsonWebKey2020",
-            "publicKeyJwk": {
-                "kty": "EC",
-                "crv": "P-384",
-                "x": "H00inPZzl2gWx7UsFcQUN8YALhNdhoJr5OXHDtfQo8V59FZzumir2L2tcH2oRB75iwY5rGblAhn9wEMIn5jikHL7B26XV7SLNqj1bYiLBiRLix8Q==",
-                "y": "JZsXa2Ecs7sdvl11buQ82omNqnrH8qio2buzNC6BkbK+yGQRvK+AHGvwh8fCHdiEVRoOyIiaTtQZkKrT+Ijxw==",
-                "x5u": "https://raw.githubusercontent.com/YassirSellami/trusted-identity/main/certificate.pem"
-            }
-        }
-    ],
-    "assertionMethod": [
-        "did:web:raw.githubusercontent.com:YassirSellami:trusted-identity:main#EC"
-    ]
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3c-ccg.github.io/lds-jws2020/contexts/v1/"
+  ],
+  "id": "did:web:raw.githubusercontent.com:YassirSellami:trusted-identity:main",
+  "verificationMethod": [
+    {
+      "id": "did:web:raw.githubusercontent.com:YassirSellami:trusted-identity:main#EC",
+      "type": "JsonWebKey2020",
+      "publicKeyJwk": {
+        "kty": "EC",
+        "crv": "P-384",
+        "x": "H00inPZzl2gWx7UsFcQUN8YALhNdhoJr5OXHDtfQo8V59FZzumir2L2tcH2oRB75iwY5rGblAhn9wEMIn5jikHL7B26XV7SLNqj1bYiLBiRLix8Q==",
+        "y": "JZsXa2Ecs7sdvl11buQ82omNqnrH8qio2buzNC6BkbK+yGQRvK+AHGvwh8fCHdiEVRoOyIiaTtQZkKrT+Ijxw==",
+        "x5u": "https://raw.githubusercontent.com/YassirSellami/trusted-identity/main/certificate.pem"
+      }
+    },
+    {
+      "id": "did:web:raw.githubusercontent.com:YassirSellami:trusted-identity:main#JWK2020-RSA",
+      "type": "JsonWebKey2020",
+      "publicKeyJwk": {
+        "kty": "RSA",
+        "n": "87gn1RxTAC3DupjRjbRRWhtdMTqaAETLcKDqwPS-baJuNfc9sVT6kSOlH_TR5bIp_OSL4hO9YogcW3s0L6zi99QUxt1BA-_PyOEZf3FZARn5tZtfuwkQ5MfUY3-E883BKPus60MGcviOoJyCYR2ljrEq04EK869Z4wWQfwRYZH9fjGX4j1duD7_M6Vxs59nuA39sFGYMuOl81mp-5OYvYkmLg0etnQdJq3xYcZie6LQ_3Jeb9gEwRvWybFMDiCbqEtKVMdtyisgey09O4pUdqpR0Er7jGFXVT9l1IhJgZ9sMVxQahC46-fAU-HFEHqwSW3sN71-9BbpMjfC-CGouww",
+        "e": "AQAB",
+        "alg": "RS256",
+        "x5u": "https://raw.githubusercontent.com/YassirSellami/trusted-identity/main/generate_keypair_rsa/cert.pem"
+      }
+    }
+  ],
+  "assertionMethod": [
+    "did:web:raw.githubusercontent.com:YassirSellami:trusted-identity:main#EC",
+    "did:web:raw.githubusercontent.com:YassirSellami:trusted-identity:main#JWK2020-RSA"
+  ]
 }

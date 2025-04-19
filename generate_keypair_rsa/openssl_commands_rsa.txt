@@ -1,0 +1,53 @@
+0. Install openssl
+    Windows (or use WSL)
+        Use Git Bash
+        openssl version
+        choco install jq
+
+    Linux
+        sudo apt update
+        sudo apt install openssl -y
+        sudo apt install jq -y
+        openssl version
+
+1. Create an RSA keypair (private and public key)
+    openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
+
+2. Extract the public key from the private key
+    openssl rsa -in private_key.pem -pubout -out public_key.pem
+
+3. Create a self-signed certificate using the private key
+    openssl req -new -x509 -key private_key.pem -out cert.pem -days 365 -subj "/CN=example.com"
+
+    openssl req -new -x509 -key private_key.pem -out cert.pem -days 365 -subj "//CN=example.com"
+
+4.1. Output the public key in JWK format (npm)
+    npm install -g pem-jwk
+
+    pem-jwk public_key.pem > public_key.jwk
+
+4.2. Output the public key in JWK format (pip)
+    pip install cryptography jwcrypto
+
+    public_key_to_jwk.py
+        from jwcrypto import jwk
+        from cryptography.hazmat.primitives import serialization
+
+        # Load the PEM public key
+        with open("public_key.pem", "rb") as f:
+            pem_data = f.read()
+
+        # Create JWK from PEM
+        key = jwk.JWK.from_pem(pem_data)
+        jwk_json = key.export(private_key=False)
+
+        # Add the "alg" property
+        import json
+        jwk_dict = json.loads(jwk_json)
+        jwk_dict['alg'] = 'RS256'
+
+        # Print the updated JWK
+        print(json.dumps(jwk_dict, indent=2))
+
+    python public_key_to_jwk.py > public_key.jwk
+
